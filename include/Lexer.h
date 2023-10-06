@@ -28,6 +28,9 @@ private:
     size_t identifierCount = 0;
     size_t delimiterCount = 0;
     size_t operatorCount = 0;
+    size_t wordCount = 0;
+    size_t logicalLineCount = 0;
+    bool lineJoin = false;
     void commentHandler(int first, std::ostream &os);
     void digitHandler(int first, std::ostream &os);
     void alphaHandler(int first, std::ostream &ostream);

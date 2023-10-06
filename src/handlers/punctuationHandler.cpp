@@ -117,12 +117,10 @@ void Lexer::punctuationHandler(int first, std::ostream &ostream) {
         delimiterCount ++;
         stringMap = pythonDelimiters;
         typeName = "Delimiter";
-    } else if (tokenType == pLexer::OPERATOR) {
+    } else {
         operatorCount ++;
         stringMap = pythonOperators;
         typeName = "Operator";
-    } else {
-        throw LexerException(pLexer::PUNCTUATION_ERROR, "Invalid Punctuation c");
     }
     auto t = stringMap.find(content);
     if (t != stringMap.end()) {
@@ -130,4 +128,10 @@ void Lexer::punctuationHandler(int first, std::ostream &ostream) {
     } else {
         throw LexerException(pLexer::PUNCTUATION_ERROR, "Invalid Punctuation d");
     }
+    if (content == ",") {
+        this->lineJoin = true;
+    } else {
+        this->lineJoin = false;
+    }
+    this->wordCount ++;
 }

@@ -136,4 +136,5 @@ void Lexer::digitHandler(int first, std::ostream &os) {
         case pLexer::IN_EXP:
             throw LexerException(pLexer::NUMBER_ERROR, "Number Format");
     }
+    this->wordCount ++;
 }

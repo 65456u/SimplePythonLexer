@@ -25,4 +25,5 @@ void Lexer::stringHandler(int first, std::ostream &ostream, const std::string &s
     std::string content = stringPrefix + std::string(buffer.begin(), buffer.end());
     this->literalTable[content] = literalType;
     ostream << "Literal\t" << "String\t" << content << std::endl;
+    this->wordCount ++;
 }

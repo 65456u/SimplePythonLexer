@@ -28,4 +28,5 @@ void Lexer::alphaHandler(int first, std::ostream &ostream) {
         ostream << "Identifier\t" << name << '\t' << id << '\t' << mark << std::endl;
         this->identifierCount ++;
     }
+    this->wordCount++;
 }
